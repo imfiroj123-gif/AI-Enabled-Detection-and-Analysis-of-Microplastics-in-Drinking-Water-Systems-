@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Research Collaboration | AquaNanoAI</title>
+  <meta name="description" content="Connect with the microplastics research laboratory for dataset collaboration, methodology inquiries, and academic feedback.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="logo-icon-wrap">
+          <img src="assets/icons/logo.svg" alt="AquaNanoAI Logo" class="brand-logo-img">
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">AquaNano<span>AI</span></span>
+          <span class="brand-sub">Microplastics Research Lab</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="detection.html" class="nav-link">Detection</a>
+        <a href="analysis.html" class="nav-link">Analysis</a>
+        <a href="samples.html" class="nav-link">Samples</a>
+        <a href="research.html" class="nav-link">Research</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <button type="button" class="theme-toggle-btn" aria-label="Toggle Light and Dark Mode"></button>
+        <a href="detection.html" class="btn btn-primary btn-sm d-none-mobile">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M5 12h14"/></svg>
+          Ingest Sample
+        </a>
+        <button type="button" class="mobile-nav-toggle" aria-label="Open Navigation Drawer">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-drawer" id="mobileDrawer">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="dashboard.html" class="nav-link">Dashboard</a>
+    <a href="detection.html" class="nav-link">Detection</a>
+    <a href="analysis.html" class="nav-link">Analysis</a>
+    <a href="samples.html" class="nav-link">Samples</a>
+    <a href="research.html" class="nav-link">Research</a>
+    <a href="contact.html" class="nav-link active">Contact</a>
+  </div>
+
+  <!-- Hero Header -->
+  <section style="padding: 4rem 0 3rem; background: radial-gradient(circle at 50% 0%, rgba(14, 165, 233, 0.12), transparent 70%); border-bottom: 1px solid var(--border-subtle);">
+    <div class="container" style="text-align: center; max-width: 800px;">
+      <span class="badge badge-info" style="margin-bottom: 0.75rem;">Academic & Laboratory Inquiries</span>
+      <h1 style="font-size: clamp(2rem, 3.5vw, 2.8rem); margin-bottom: 1.25rem;">
+        Connect with the <span class="gradient-text">Research Team</span>
+      </h1>
+      <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7;">
+        Interested in piloting optical detection algorithms, contributing water sample micrographs, or discussing collaborative laboratory validation? Reach out below.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Container -->
+  <div class="container" style="padding: 3.5rem 1.5rem;">
+    <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 3rem;" class="analysis-grid">
+      
+      <!-- Contact Form -->
+      <div class="card" style="padding: 2.25rem;">
+        <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Submit an Inquiry</h2>
+        <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1.75rem;">
+          Fill out the details below. All fields marked with * are required.
+        </p>
+
+        <!-- Simulated Backend Notice -->
+        <div style="background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.25); border-radius: var(--radius-md); padding: 0.9rem; font-size: 0.8rem; line-height: 1.5; color: #fbbf24; margin-bottom: 1.5rem;">
+          <strong>ℹ️ Demonstration Mode Notice:</strong> This is a client-side frontend demonstration. Submissions are validated locally and logged to the browser console. An active backend (Node.js/Express, Python/FastAPI, or SMTP email gateway) is required for genuine remote email transmission.
+        </div>
+
+        <form id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contactName" class="form-label">Full Name *</label>
+              <input type="text" id="contactName" class="form-control" required placeholder="Dr. Jane Doe">
+              <div class="form-hint" id="nameError" style="color: var(--accent-red); display: none;">Please provide your name.</div>
+            </div>
+
+            <div class="form-group">
+              <label for="contactEmail" class="form-label">Academic / Professional Email *</label>
+              <input type="email" id="contactEmail" class="form-control" required placeholder="j.doe@university.edu">
+              <div class="form-hint" id="emailError" style="color: var(--accent-red); display: none;">Please provide a valid email address.</div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contactOrg" class="form-label">Institution / Organization</label>
+              <input type="text" id="contactOrg" class="form-control" placeholder="Dept of Environmental Engineering, State Univ">
+            </div>
+
+            <div class="form-group">
+              <label for="contactSubject" class="form-label">Inquiry Subject *</label>
+              <select id="contactSubject" class="form-control" required>
+                <option value="Research Collaboration">Research & Algorithm Collaboration</option>
+                <option value="Dataset Request">Micrograph Dataset Access Request</option>
+                <option value="Methodology Feedback">Methodology & Peer Review Feedback</option>
+                <option value="Student Project">University Student Project Inquiry</option>
+                <option value="General">General Question</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div style="display: flex; justify-content: space-between;">
+              <label for="contactMessage" class="form-label">Message *</label>
+              <span id="charCount" style="font-size: 0.75rem; color: var(--text-muted);">0 / 20 min</span>
+            </div>
+            <textarea id="contactMessage" class="form-control" rows="5" required placeholder="Please outline your research focus, water catchment type, or feedback on our detection protocol..."></textarea>
+            <div class="form-hint" id="messageError" style="color: var(--accent-red); display: none;">Message must contain at least 20 characters.</div>
+          </div>
+
+          <button type="submit" class="btn btn-primary" id="btnSubmitContact" style="padding: 0.8rem 1.6rem; font-size: 0.95rem;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Send Simulated Message
+          </button>
+        </form>
+
+        <div id="contactSuccessCard" style="display: none; margin-top: 1.5rem; background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: var(--radius-md); padding: 1.25rem;">
+          <h4 style="color: var(--accent-green); font-size: 1rem; margin-bottom: 0.35rem; display: flex; align-items: center; gap: 0.5rem;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            Inquiry Validated Successfully (Demo Mode)
+          </h4>
+          <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5;">
+            Your message was formatted and verified against all validation rules. As this is a standalone frontend demonstration, the payload was logged to the browser console rather than transmitted via SMTP.
+          </p>
+        </div>
+      </div>
+
+      <!-- Lab Directory & Location Card -->
+      <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+        
+        <div class="card">
+          <h3 style="font-size: 1.25rem; margin-bottom: 1.25rem;">Laboratory Directory</h3>
+          
+          <div style="display: flex; flex-direction: column; gap: 1.25rem; font-size: 0.88rem;">
+            
+            <div style="display: flex; gap: 0.85rem;">
+              <div style="color: var(--accent-cyan); flex-shrink: 0;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <strong style="color: var(--text-primary);">Physical Laboratory Location:</strong>
+                <p style="color: var(--text-secondary); line-height: 1.5; margin-top: 0.2rem;">
+                  Environmental Science & Water Quality Complex, Room 418<br>
+                  Center for Advanced Optical Imaging<br>
+                  Academic Research Campus
+                </p>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 0.85rem;">
+              <div style="color: var(--accent-teal-light); flex-shrink: 0;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <strong style="color: var(--text-primary);">Direct Research Email:</strong>
+                <p style="color: var(--accent-cyan); font-family: var(--font-mono); margin-top: 0.2rem;">
+                  research@aquanano.ai
+                </p>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 0.85rem;">
+              <div style="color: var(--accent-green); flex-shrink: 0;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div>
+                <strong style="color: var(--text-primary);">Laboratory Hours:</strong>
+                <p style="color: var(--text-secondary); line-height: 1.5; margin-top: 0.2rem;">
+                  Monday – Friday: 08:30 – 17:30 UTC<br>
+                  Spectroscopy Scheduling: By appointment
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Citation Info -->
+        <div class="card" style="background: var(--bg-secondary);">
+          <h4 style="font-size: 1rem; margin-bottom: 0.75rem;">How to Cite This Project</h4>
+          <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
+            If utilizing this optical classification framework or benchmark dataset in your academic coursework or thesis, please cite:
+          </p>
+          <div class="mono" style="background: var(--bg-input); border: 1px solid var(--border-subtle); padding: 0.75rem; border-radius: var(--radius-sm); font-size: 0.75rem; color: #38bdf8; line-height: 1.5;">
+            AquaNanoAI Research Group (2026). "AI-Enabled Detection and Analysis of Microplastics in Drinking Water Systems: A Client-Side Optical Demonstration." Academic Software Repository.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+        <div>
+          AquaNanoAI Scientific Documentation Protocol • Reference Edition 2026
+        </div>
+        <a href="index.html" class="btn btn-outline btn-sm">Return to Platform Home</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Shared Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/contact.js"></script>
+</body>
+</html>

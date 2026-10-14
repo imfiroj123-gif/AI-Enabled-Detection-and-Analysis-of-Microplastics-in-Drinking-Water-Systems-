@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI-Enabled Detection & Analysis of Microplastics in Drinking Water Systems</title>
+  <meta name="description" content="A modern scientific platform combining high-resolution digital micrography and computer vision for the automated detection, classification, and quantification of microplastics in potable water systems.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       Top Navigation Bar
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="logo-icon-wrap">
+          <img src="assets/icons/logo.svg" alt="AquaNanoAI Logo" class="brand-logo-img">
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">AquaNano<span>AI</span></span>
+          <span class="brand-sub">Microplastics Research Lab</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="detection.html" class="nav-link">Detection</a>
+        <a href="analysis.html" class="nav-link">Analysis</a>
+        <a href="samples.html" class="nav-link">Samples</a>
+        <a href="research.html" class="nav-link">Research</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <button type="button" class="theme-toggle-btn" aria-label="Toggle Light and Dark Mode"></button>
+        <a href="detection.html" class="btn btn-primary btn-sm d-none-mobile">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M12 5v14M5 12h14"/>
+          </svg>
+          Ingest Sample
+        </a>
+        <button type="button" class="mobile-nav-toggle" aria-label="Open Navigation Drawer">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-drawer" id="mobileDrawer">
+    <a href="index.html" class="nav-link active">Home</a>
+    <a href="dashboard.html" class="nav-link">Dashboard</a>
+    <a href="detection.html" class="nav-link">Detection</a>
+    <a href="analysis.html" class="nav-link">Analysis</a>
+    <a href="samples.html" class="nav-link">Samples</a>
+    <a href="research.html" class="nav-link">Research</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+    <div style="margin-top: 1rem;">
+      <a href="detection.html" class="btn btn-primary" style="width: 100%;">Ingest Water Sample</a>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       Hero Section
+       ======================================================================== -->
+  <section class="hero-section" style="padding: 4.5rem 0 3.5rem; position: relative; overflow: hidden; background: radial-gradient(circle at 80% 20%, rgba(14, 165, 233, 0.12), transparent 50%), radial-gradient(circle at 10% 80%, rgba(13, 148, 136, 0.08), transparent 45%);">
+    <div class="container">
+      <div class="hero-content-grid" style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 3.5rem; align-items: center;">
+        
+        <div>
+          <div style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+            <span class="badge badge-info">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              Research Protocol v2.4
+            </span>
+            <span class="badge badge-demo">
+              Simulated AI Pipeline (Demo Mode)
+            </span>
+          </div>
+
+          <h1 style="font-size: clamp(2.2rem, 4vw, 3.4rem); line-height: 1.15; margin-bottom: 1.25rem;">
+            AI-Enabled Detection and Analysis of <span class="gradient-text">Microplastics in Drinking Water</span>
+          </h1>
+
+          <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 2rem;">
+            A state-of-the-art optical microscopy and computer vision system engineered for municipal water utilities, environmental laboratories, and water safety researchers. Automate particle segmentation, morphological categorization (fibers, fragments, films, beads), and concentration profiling in potable water systems.
+          </p>
+
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2.5rem;">
+            <a href="detection.html" class="btn btn-primary" style="padding: 0.8rem 1.6rem; font-size: 1rem;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+              Start Detection
+            </a>
+            <a href="dashboard.html" class="btn btn-secondary" style="padding: 0.8rem 1.6rem; font-size: 1rem;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+              Explore Dashboard
+            </a>
+          </div>
+
+          <!-- Quick Metric Badges -->
+          <div class="hero-quick-metrics" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 1rem; border-top: 1px solid var(--border-subtle); padding-top: 1.5rem;">
+            <div>
+              <div class="mono" style="font-size: 1.5rem; font-weight: 800; color: var(--accent-cyan);">94.8%</div>
+              <div style="font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase;">Detection Precision</div>
+            </div>
+            <div>
+              <div class="mono" style="font-size: 1.5rem; font-weight: 800; color: var(--accent-teal-light);">&lt; 35s</div>
+              <div style="font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase;">Inference Latency</div>
+            </div>
+            <div>
+              <div class="mono" style="font-size: 1.5rem; font-weight: 800; color: #f59e0b;">4 Classes</div>
+              <div style="font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase;">Morphology Types</div>
+            </div>
+            <div>
+              <div class="mono" style="font-size: 1.5rem; font-weight: 800; color: #10b981;">10 - 5000 µm</div>
+              <div style="font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase;">Calibrated Range</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual Showcase -->
+        <div style="position: relative;">
+          <div style="border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--border-color); box-shadow: var(--shadow-lg), var(--shadow-glow); background: #000;">
+            <img src="assets/images/hero_microplastic.jpg" alt="Fluorescence microscopy showing microplastic fibers and particles in water sample" style="width: 100%; height: auto; display: block;">
+            <div style="padding: 1.25rem; background: var(--bg-card); border-top: 1px solid var(--border-subtle); display: flex; align-items: center; justify-content: space-between;">
+              <div>
+                <div style="font-size: 0.85rem; font-weight: 700; color: var(--text-primary);">Micrograph #MP-2026-F8</div>
+                <div style="font-size: 0.75rem; color: var(--text-muted);">Darkfield / Fluorescence Composite • 100x Magnification</div>
+              </div>
+              <span class="badge badge-active">Live Optical Feed</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       What Are Microplastics & The Drinking Water Problem
+       ======================================================================== -->
+  <section style="padding: 4.5rem 0; background-color: var(--bg-secondary);">
+    <div class="container">
+      <div style="text-align: center; max-width: 760px; margin: 0 auto 3.5rem;">
+        <span class="badge badge-info" style="margin-bottom: 0.5rem;">Scientific Background</span>
+        <h2 style="font-size: 2.2rem; margin-bottom: 1rem;">Microplastics in Potable Water Infrastructure</h2>
+        <p style="color: var(--text-secondary); font-size: 1.05rem;">
+          Microplastics are synthetic polymer particles ranging from 1 micrometer (µm) to 5 millimeters (mm). Despite conventional municipal coagulation and filtration, microscopic fibers and fragments penetrate finished drinking water networks.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+        
+        <div class="card card-interactive">
+          <div style="width: 3rem; height: 3rem; border-radius: var(--radius-md); background: rgba(56, 189, 248, 0.15); color: var(--particle-fiber); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20L20 4M20 4h-8M20 4v8"/></svg>
+          </div>
+          <h3 style="font-size: 1.2rem; margin-bottom: 0.6rem;">Fibers (Synthetic Textiles)</h3>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+            Elongated particles shed during synthetic laundry cycles (polyester, nylon, acrylic). Fibers represent over 60–80% of microplastics detected in tap water due to their high aspect ratio and buoyancy.
+          </p>
+        </div>
+
+        <div class="card card-interactive">
+          <div style="width: 3rem; height: 3rem; border-radius: var(--radius-md); background: rgba(244, 63, 94, 0.15); color: var(--particle-fragment); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polygon points="2 17 12 22 22 17"/><polygon points="2 12 12 17 22 12"/></svg>
+          </div>
+          <h3 style="font-size: 1.2rem; margin-bottom: 0.6rem;">Fragments (Degraded Plastics)</h3>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+            Hard, irregular, sharp-edged particles formed by photo-oxidation, mechanical shear, and environmental weathering of larger plastic debris (PE, PP, PVC) entering raw reservoirs.
+          </p>
+        </div>
+
+        <div class="card card-interactive">
+          <div style="width: 3rem; height: 3rem; border-radius: var(--radius-md); background: rgba(16, 185, 129, 0.15); color: var(--particle-film); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          </div>
+          <h3 style="font-size: 1.2rem; margin-bottom: 0.6rem;">Films (Packaging & Membranes)</h3>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+            Ultra-thin, flexible planar sheets typically derived from degraded agricultural mulches, grocery bags, and plastic food wraps that bypass sedimentation basins.
+          </p>
+        </div>
+
+        <div class="card card-interactive">
+          <div style="width: 3rem; height: 3rem; border-radius: var(--radius-md); background: rgba(234, 179, 8, 0.15); color: var(--particle-bead); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg>
+          </div>
+          <h3 style="font-size: 1.2rem; margin-bottom: 0.6rem;">Beads & Microspheres</h3>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+            Uniform spherical polymers historically manufactured for cosmetics, abrasive cleaners, industrial air-blasting, or medical carriers that accumulate in effluent pipelines.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Automated 3-Step Scientific Workflow
+       ======================================================================== -->
+  <section style="padding: 5rem 0;">
+    <div class="container">
+      <div style="text-align: center; max-width: 720px; margin: 0 auto 3.5rem;">
+        <span class="badge badge-info" style="margin-bottom: 0.5rem;">Pipeline Architecture</span>
+        <h2 style="font-size: 2.2rem; margin-bottom: 1rem;">Three-Stage Analytical Workflow</h2>
+        <p style="color: var(--text-secondary);">
+          From vacuum membrane filtration to calibrated optical quantification, our digital pipeline provides rapid automated candidate screening.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; position: relative;">
+        
+        <!-- Step 1 -->
+        <div class="card" style="position: relative; padding: 2rem;">
+          <div style="position: absolute; top: 1.5rem; right: 1.5rem; font-size: 2.5rem; font-weight: 800; color: rgba(255, 255, 255, 0.05);" class="mono">01</div>
+          <div style="width: 3rem; height: 3rem; border-radius: var(--radius-md); background: rgba(14, 165, 233, 0.12); color: var(--accent-cyan); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          </div>
+          <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">1. Ingest Sample Micrograph</h3>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+            Capture membrane filter slides using calibrated brightfield or Nile Red fluorescence microscopy. Submit high-resolution imagery along with sample volume (L), date, and catchment location.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="card" style="position: relative; padding: 2rem;">
+          <div style="position: absolute; top: 1.5rem; right: 1.5rem; font-size: 2.5rem; font-weight: 800; color: rgba(255, 255, 255, 0.05);" class="mono">02</div>
+          <div style="width: 3rem; height: 3rem; border-radius: var(--radius-md); background: rgba(20, 184, 166, 0.12); color: var(--accent-teal-light); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          </div>
+          <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">2. Vision Segmentation & Classification</h3>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+            Deep learning neural networks process the micrograph to separate particles from mineral background, extract bounding boxes, classify morphological class, and estimate major/minor axes.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="card" style="position: relative; padding: 2rem;">
+          <div style="position: absolute; top: 1.5rem; right: 1.5rem; font-size: 2.5rem; font-weight: 800; color: rgba(255, 255, 255, 0.05);" class="mono">03</div>
+          <div style="width: 3rem; height: 3rem; border-radius: var(--radius-md); background: rgba(16, 185, 129, 0.12); color: var(--accent-green); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem;">3. Review Quantitative Reports</h3>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+            Examine high-resolution bounding box annotations, particle concentration (particles/L), size distribution histograms, and export printable laboratory certificates or CSV datasets.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Laboratory Deep-Dive & Research Methodology
+       ======================================================================== -->
+  <section style="padding: 5rem 0; background-color: var(--bg-secondary);">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center;" class="hero-content-grid">
+        
+        <div>
+          <div style="border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--border-color); box-shadow: var(--shadow-lg);">
+            <img src="assets/images/lab_analysis.jpg" alt="Spectroscopy and automated fluorescence microscope in environmental water laboratory" style="width: 100%; height: auto; display: block;">
+          </div>
+        </div>
+
+        <div>
+          <span class="badge badge-info" style="margin-bottom: 0.5rem;">Analytical Rigor</span>
+          <h2 style="font-size: 2.2rem; margin-bottom: 1.25rem;">Why Optical AI Screening Precedes Spectroscopy</h2>
+          <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.25rem;">
+            Gold-standard polymer characterization methods such as Micro-Raman and Micro-FTIR spectroscopy are chemically definitive, but manual scanning of a 47 mm membrane filter can take up to <strong>14 hours per sample</strong>.
+          </p>
+          <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.5rem;">
+            Our computer vision framework acts as an ultra-fast high-throughput pre-screener: identifying coordinates of candidate particles in under 45 seconds, enabling targeted laser micro-spectroscopy only where plastic candidate targets are localized.
+          </p>
+
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="research.html" class="btn btn-outline">
+              Read Research Methodology →
+            </a>
+            <a href="samples.html" class="btn btn-secondary">
+              Browse Sample Database
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Scientific Disclaimer Notice -->
+      <div class="scientific-disclaimer" style="margin-top: 3.5rem;">
+        <strong>⚠️ Scientific Limitations & Safety Threshold Notice:</strong> Optical micrograph analysis identifies <em>candidate</em> microplastic particles based on morphology, aspect ratio, and fluorescence reflectance. Optical detection alone cannot provide 100% polymer confirmation (such as differentiating natural cellulose fibers from synthetic polyethylene). Furthermore, global regulatory bodies (including the WHO) have not established legally enforceable human health thresholds for microplastics in tap water. Hence, this platform explicitly reports candidate counts and concentrations rather than arbitrary binary "safe/unsafe" designations.
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Footer
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand-logo" style="margin-bottom: 1rem;">
+            <div class="logo-icon-wrap">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+              </svg>
+            </div>
+            <div class="brand-text">
+              <span class="brand-title">AquaNanoAI</span>
+              <span class="brand-sub">Microplastics Research Lab</span>
+            </div>
+          </div>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; max-width: 320px;">
+            Advancing water quality intelligence through high-throughput optical microscopy, neural network particle classification, and open environmental science.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Platform</h4>
+          <ul class="footer-links">
+            <li><a href="dashboard.html">System Dashboard</a></li>
+            <li><a href="detection.html">Sample Detection Pipeline</a></li>
+            <li><a href="analysis.html">Analysis Reports</a></li>
+            <li><a href="samples.html">Sample Management</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Scientific Resources</h4>
+          <ul class="footer-links">
+            <li><a href="research.html">Methodology & Paper</a></li>
+            <li><a href="research.html#spectroscopy">FTIR & Raman Comparison</a></li>
+            <li><a href="research.html#morphology">Morphological Taxonomy</a></li>
+            <li><a href="research.html#limitations">Scientific Limitations</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Inquiries & Lab</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Contact Research Team</a></li>
+            <li><a href="contact.html#collaboration">Collaborative Testing</a></li>
+            <li><a href="contact.html#feedback">Algorithm Feedback</a></li>
+            <li><a href="contact.html#citation">Citation Guidelines</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 AI-Enabled Microplastics Detection Research Project. All scientific demo rights reserved.
+        </div>
+        <div style="display: flex; gap: 1rem; align-items: center;">
+          <span class="badge badge-demo">Simulated Frontend Demonstration</span>
+          <span style="color: var(--text-muted);">|</span>
+          <a href="research.html" style="color: var(--accent-cyan);">Academic Protocol v2.4</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>

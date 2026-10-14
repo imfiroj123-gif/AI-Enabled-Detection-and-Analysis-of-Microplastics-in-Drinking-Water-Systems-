@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scientific Methodology & Research | Microplastics in Drinking Water</title>
+  <meta name="description" content="Comprehensive scientific guide on microplastics in potable water, morphology classification, computer vision pipelines, and analytical spectroscopy.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="logo-icon-wrap">
+          <img src="assets/icons/logo.svg" alt="AquaNanoAI Logo" class="brand-logo-img">
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">AquaNano<span>AI</span></span>
+          <span class="brand-sub">Microplastics Research Lab</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="detection.html" class="nav-link">Detection</a>
+        <a href="analysis.html" class="nav-link">Analysis</a>
+        <a href="samples.html" class="nav-link">Samples</a>
+        <a href="research.html" class="nav-link active">Research</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <button type="button" class="theme-toggle-btn" aria-label="Toggle Light and Dark Mode"></button>
+        <a href="detection.html" class="btn btn-primary btn-sm d-none-mobile">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M5 12h14"/></svg>
+          Ingest Sample
+        </a>
+        <button type="button" class="mobile-nav-toggle" aria-label="Open Navigation Drawer">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-drawer" id="mobileDrawer">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="dashboard.html" class="nav-link">Dashboard</a>
+    <a href="detection.html" class="nav-link">Detection</a>
+    <a href="analysis.html" class="nav-link">Analysis</a>
+    <a href="samples.html" class="nav-link">Samples</a>
+    <a href="research.html" class="nav-link active">Research</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </div>
+
+  <!-- Hero Header for Research -->
+  <section style="padding: 4rem 0 3rem; background: radial-gradient(circle at 50% 0%, rgba(14, 165, 233, 0.15), transparent 70%); border-bottom: 1px solid var(--border-subtle);">
+    <div class="container" style="text-align: center; max-width: 860px;">
+      <span class="badge badge-info" style="margin-bottom: 0.75rem;">Scientific Monograph</span>
+      <h1 style="font-size: clamp(2rem, 3.5vw, 3rem); margin-bottom: 1.25rem;">
+        Analytical Principles of <span class="gradient-text">Microplastics Detection</span> in Potable Water
+      </h1>
+      <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7;">
+        An academic examination of microplastic occurrence, morphological taxonomy, optical machine learning pipelines, and the complementary relationship between computer vision and laser micro-spectroscopy.
+      </p>
+    </div>
+  </section>
+
+  <!-- Content Container -->
+  <div class="container" style="padding: 3.5rem 1.5rem;">
+    <div style="display: grid; grid-template-columns: 280px 1fr; gap: 3rem;" class="analysis-grid">
+      
+      <!-- Sticky Navigation Table of Contents -->
+      <nav style="position: sticky; top: 6rem; height: fit-content;" class="d-none-mobile">
+        <div class="card" style="padding: 1.25rem;">
+          <h4 style="font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 1rem;">
+            Contents
+          </h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.88rem;">
+            <li><a href="#definition" style="color: var(--text-secondary);">1. Definition & Boundaries</a></li>
+            <li><a href="#morphology" style="color: var(--text-secondary);">2. Morphological Classes</a></li>
+            <li><a href="#pathways" style="color: var(--text-secondary);">3. Ingestion Pathways</a></li>
+            <li><a href="#technologies" style="color: var(--text-secondary);">4. Analytical Technologies</a></li>
+            <li><a href="#cv-pipeline" style="color: var(--text-secondary);">5. Computer Vision Pipeline</a></li>
+            <li><a href="#limitations" style="color: var(--text-secondary);">6. Scientific Limitations</a></li>
+            <li><a href="#citations" style="color: var(--text-secondary);">7. Standards & References</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Main Research Articles -->
+      <div style="display: flex; flex-direction: column; gap: 3.5rem;">
+        
+        <!-- Section 1: Definition -->
+        <section id="definition">
+          <h2 style="font-size: 1.85rem; margin-bottom: 1rem; border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem;">
+            1. Definition and Physical Boundaries
+          </h2>
+          <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem;">
+            According to the International Organization for Standardization (<strong>ISO/TR 21960</strong>) and the United States Environmental Protection Agency (EPA), <strong>microplastics</strong> are synthetic solid particles or polymeric matrices with dimensions between <strong>1 µm and 5 mm</strong>.
+          </p>
+          <div class="card" style="margin: 1.5rem 0; background: var(--bg-secondary);">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+              <div>
+                <strong style="color: var(--accent-cyan);">Macroplastics</strong>
+                <p style="font-size: 0.85rem; color: var(--text-muted);">&gt; 25 mm (visible debris, plastic bottles)</p>
+              </div>
+              <div>
+                <strong style="color: var(--accent-teal-light);">Mesoplastics</strong>
+                <p style="font-size: 0.85rem; color: var(--text-muted);">5 mm – 25 mm (bottle caps, fragments)</p>
+              </div>
+              <div>
+                <strong style="color: var(--particle-fragment);">Microplastics</strong>
+                <p style="font-size: 0.85rem; color: var(--text-muted);">1 µm – 5 mm (primary target of optical AI)</p>
+              </div>
+              <div>
+                <strong style="color: var(--accent-purple);">Nanoplastics</strong>
+                <p style="font-size: 0.85rem; color: var(--text-muted);">&lt; 1 µm (&lt; 1000 nm, cellular permeation range)</p>
+              </div>
+            </div>
+          </div>
+          <p style="color: var(--text-secondary); line-height: 1.8;">
+            Microplastics are further subdivided into <em>primary microplastics</em>—manufactured directly for commercial applications such as cosmetic microbeads, resin pellets, and sandblasting abrasives—and <em>secondary microplastics</em>, which result from the environmental photo-oxidation, mechanical shear, and physical weathering of larger consumer plastics.
+          </p>
+        </section>
+
+        <!-- Section 2: Morphology Classification -->
+        <section id="morphology">
+          <h2 style="font-size: 1.85rem; margin-bottom: 1rem; border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem;">
+            2. Morphological Taxonomy & Optical Indicators
+          </h2>
+          <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.5rem;">
+            Morphological classification is crucial because particle geometry heavily dictates hydrodynamic behavior in water treatment filtration beds, digestive tract residence time in biological systems, and computer vision segmentation parameters.
+          </p>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem;">
+            
+            <div class="card" style="border-left: 4px solid var(--particle-fiber);">
+              <h4 style="color: var(--particle-fiber); margin-bottom: 0.4rem;">Fibers (Aspect Ratio &gt; 3)</h4>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">
+                <strong>Origins:</strong> Synthetic garments (polyester, nylon, polyacrylic) shed during washing.<br>
+                <strong>Optical Characteristics:</strong> Constant cross-sectional diameter, cylindrical smooth or twisted contours, visible fluorescence under Nile Red staining.
+              </p>
+            </div>
+
+            <div class="card" style="border-left: 4px solid var(--particle-fragment);">
+              <h4 style="color: var(--particle-fragment); margin-bottom: 0.4rem;">Fragments (Rigid & Angular)</h4>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">
+                <strong>Origins:</strong> Mechanical degradation of HDPE/PP bottle crates, containers, and consumer goods.<br>
+                <strong>Optical Characteristics:</strong> Sharp, jagged fractured edges, irregular crystalline or opaque facet reflections.
+              </p>
+            </div>
+
+            <div class="card" style="border-left: 4px solid var(--particle-film);">
+              <h4 style="color: var(--particle-film); margin-bottom: 0.4rem;">Films (Planar & Translucent)</h4>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">
+                <strong>Origins:</strong> Degraded polyethylene (LDPE) grocery bags, pallet wraps, and agricultural mulches.<br>
+                <strong>Optical Characteristics:</strong> Extremely thin 2D sheets, translucent surface folds, low contrast under brightfield illumination.
+              </p>
+            </div>
+
+            <div class="card" style="border-left: 4px solid var(--particle-bead);">
+              <h4 style="color: var(--particle-bead); margin-bottom: 0.4rem;">Beads & Pellets (Spherical)</h4>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">
+                <strong>Origins:</strong> Industrial virgin resin pellets, scrubbers, and pharmaceutical drug delivery vectors.<br>
+                <strong>Optical Characteristics:</strong> Near-perfect circular perimeter (circularity factor &gt; 0.85), isotropic refractive properties.
+              </p>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Section 3: Ingestion Pathways -->
+        <section id="pathways">
+          <h2 style="font-size: 1.85rem; margin-bottom: 1rem; border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem;">
+            3. Occurrence & Pathways into Drinking Water
+          </h2>
+          <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem;">
+            Microplastics enter municipal potable water streams through multiple distinct vectors across upstream water bodies and urban conveyance infrastructure:
+          </p>
+          <ul style="list-style: disc; padding-left: 1.5rem; color: var(--text-secondary); line-height: 1.8; display: flex; flex-direction: column; gap: 0.75rem;">
+            <li><strong>Surface Water Catchment Inflow:</strong> Municipalities sourcing raw water from rivers, lakes, or reservoirs receive untreated urban storm runoff, atmospheric aerial fallout, and treated wastewater discharge carrying high loads of textile fibers.</li>
+            <li><strong>Treatment Plant Penetration:</strong> While coagulation, flocculation, and rapid sand filtration can remove up to 90–99% of large microplastic debris (&gt; 100 µm), smaller particles (&lt; 20 µm) and slender fibers often align hydrodynamically with filter pores and pass into effluent basins.</li>
+            <li><strong>Distribution Network Degradation:</strong> Aging unlined polyvinyl chloride (PVC) and high-density polyethylene (HDPE) distribution pipes experience abrasive wall shear, dislodging micro-particulate plastic shavings directly into tap lines.</li>
+            <li><strong>Bottled Water Packaging:</strong> Friction during high-speed mechanical capping of PET water bottles and injection-molded caps sheds micro-polypropylene and polyethylene particles directly into packaged water.</li>
+          </ul>
+        </section>
+
+        <!-- Section 4: Analytical Technologies -->
+        <section id="technologies">
+          <h2 style="font-size: 1.85rem; margin-bottom: 1rem; border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem;">
+            4. Analytical Technologies Comparison
+          </h2>
+          <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.5rem;">
+            Selecting an analytical strategy requires balancing throughput speed, operational cost, and chemical certainty. The matrix below contrasts primary scientific methods:
+          </p>
+
+          <div class="table-responsive card" style="padding: 0;">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Method</th>
+                  <th>Detection Limit</th>
+                  <th>Chemical ID</th>
+                  <th>Sample Throughput</th>
+                  <th>Key Strength / Limitation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Optical AI Microscopy (This Platform)</strong></td>
+                  <td class="mono">~10 µm</td>
+                  <td>Morphological Candidate</td>
+                  <td><strong>&lt; 1 minute / filter</strong></td>
+                  <td>Ultra-fast automated screening; cannot provide 100% polymer confirmation without spectroscopy.</td>
+                </tr>
+                <tr>
+                  <td><strong>Fluorescence Nile Red Staining</strong></td>
+                  <td class="mono">~5 µm</td>
+                  <td>Hydrophobic polymer affinity</td>
+                  <td>~15 minutes / filter</td>
+                  <td>Strong optical contrast; high risk of false positives from natural lipids and waxes.</td>
+                </tr>
+                <tr>
+                  <td><strong>Micro-FTIR Spectroscopy</strong></td>
+                  <td class="mono">~20 µm</td>
+                  <td>Definitive (Fingerprint IR)</td>
+                  <td>4 to 12 hours / filter</td>
+                  <td>Gold standard for polymer identification; slow manual raster scanning across whole filters.</td>
+                </tr>
+                <tr>
+                  <td><strong>Micro-Raman Spectroscopy</strong></td>
+                  <td class="mono"><strong>~1 µm</strong></td>
+                  <td>Definitive (Vibrational modes)</td>
+                  <td>6 to 18 hours / filter</td>
+                  <td>Sub-micron resolution; vulnerable to background fluorescence quenching and sample burning.</td>
+                </tr>
+                <tr>
+                  <td><strong>Pyrolysis-GC/MS</strong></td>
+                  <td>Bulk mass (µg)</td>
+                  <td>Thermal degradation mass</td>
+                  <td>Destructive batch</td>
+                  <td>Quantifies total polymer mass; completely loses all particle count, size, and shape data.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Section 5: Computer Vision Pipeline -->
+        <section id="cv-pipeline">
+          <h2 style="font-size: 1.85rem; margin-bottom: 1rem; border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem;">
+            5. The Computer Vision & Machine Learning Pipeline
+          </h2>
+          <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem;">
+            The optical AI workflow employs a multi-tiered vision architecture designed specifically for microscopic darkfield and brightfield illumination:
+          </p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+            <div class="card" style="background: var(--bg-secondary);">
+              <span class="mono" style="font-size: 0.8rem; color: var(--accent-cyan);">STAGE 01</span>
+              <h4 style="font-size: 1rem; margin: 0.35rem 0;">Spatial Pre-Processing</h4>
+              <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.5;">
+                High-pass spatial frequency filtering and Contrast Limited Adaptive Histogram Equalization (CLAHE) remove illumination gradients across the 47mm circular membrane.
+              </p>
+            </div>
+            <div class="card" style="background: var(--bg-secondary);">
+              <span class="mono" style="font-size: 0.8rem; color: var(--accent-teal-light);">STAGE 02</span>
+              <h4 style="font-size: 1rem; margin: 0.35rem 0;">Semantic Segmentation</h4>
+              <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.5;">
+                A modified U-Net encoder-decoder network predicts binary pixel masks, separating high-reflectance particles from pore textures and background cellulose substrate.
+              </p>
+            </div>
+            <div class="card" style="background: var(--bg-secondary);">
+              <span class="mono" style="font-size: 0.8rem; color: var(--particle-fragment);">STAGE 03</span>
+              <h4 style="font-size: 1rem; margin: 0.35rem 0;">Morphology Classification</h4>
+              <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.5;">
+                Bounding box extraction and a CNN classifier evaluate aspect ratio, convexity, perimeter irregularity, and color saturation to assign morphological confidence.
+              </p>
+            </div>
+            <div class="card" style="background: var(--bg-secondary);">
+              <span class="mono" style="font-size: 0.8rem; color: var(--accent-green);">STAGE 04</span>
+              <h4 style="font-size: 1rem; margin: 0.35rem 0;">Spatial Metric Calibration</h4>
+              <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.5;">
+                Pixel dimensions are mapped to calibrated micrometers (µm) via registered optical graticule marks, computing concentration in particles per liter.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 6: Limitations -->
+        <section id="limitations">
+          <h2 style="font-size: 1.85rem; margin-bottom: 1rem; border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem;">
+            6. Scientific Limitations & Laboratory Validation
+          </h2>
+          <div class="scientific-disclaimer" style="margin: 1.5rem 0; font-size: 0.85rem;">
+            <strong>Mandatory Scientific Transparency:</strong> In accordance with environmental peer-review standards, optical classification systems must clearly document potential sources of error and physical limitations.
+          </div>
+          <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem;">
+            <strong>1. Optical False Positives:</strong> Natural fibers (such as dyed cotton, wool, cellulose, or chitin from insects) and mineral silicate fragments can closely mimic the optical appearance and aspect ratios of synthetic plastics under visible light. Nile Red staining and FTIR/Raman spectroscopy remain essential for chemical confirmation.
+          </p>
+          <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem;">
+            <strong>2. Diffraction Limits:</strong> Standard light microscopy is physically bound by the Abbe diffraction limit (~0.2–0.5 µm), making it impossible to detect nanoplastics (&lt; 1 µm) without scanning electron microscopy (SEM) or atomic force microscopy (AFM).
+          </p>
+          <p style="color: var(--text-secondary); line-height: 1.8;">
+            <strong>3. Absence of Regulatory Thresholds:</strong> The World Health Organization (WHO) published a major assessment concluding that while microplastics are ubiquitous in drinking water, current toxicological evidence is insufficient to formulate a binding health-based maximum contaminant limit (MCL). As such, this platform avoids subjective binary labels ("safe" / "toxic") and adheres strictly to quantitative concentration reporting.
+          </p>
+        </section>
+
+        <!-- Section 7: Citations -->
+        <section id="citations">
+          <h2 style="font-size: 1.85rem; margin-bottom: 1rem; border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem;">
+            7. Standards & Key Academic References
+          </h2>
+          <ul style="display: flex; flex-direction: column; gap: 1rem; font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+            <li class="card" style="padding: 1rem;">
+              <strong>World Health Organization (WHO):</strong> <em>Microplastics in drinking-water</em> (2019). ISBN 978-92-4-151619-8. Geneva, Switzerland.
+            </li>
+            <li class="card" style="padding: 1rem;">
+              <strong>ISO/TR 21960:2020:</strong> <em>Plastics — Environmental aspects — State of knowledge and methodologies for evaluation of plastics in the environment</em>. International Organization for Standardization.
+            </li>
+            <li class="card" style="padding: 1rem;">
+              <strong>Primpke, S., et al.:</strong> <em>Comparison of automated micro-FTIR and micro-Raman imaging for microplastic analysis in environmental samples</em>. Analytical and Bioanalytical Chemistry, 412(30), 8281-8298 (2020).
+            </li>
+            <li class="card" style="padding: 1rem;">
+              <strong>Shim, W. J., et al.:</strong> <em>Identification and quantification of microplastics using Nile Red fluorescence staining</em>. Marine Pollution Bulletin, 113(1-2), 469-476 (2016).
+            </li>
+          </ul>
+        </section>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+        <div>
+          AquaNanoAI Scientific Documentation Protocol • Reference Edition 2026
+        </div>
+        <a href="index.html" class="btn btn-outline btn-sm">Return to Platform Home</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Shared Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/research.js"></script>
+</body>
+</html>

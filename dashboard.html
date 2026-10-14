@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scientific Monitoring Dashboard | Microplastics in Drinking Water Systems</title>
+  <meta name="description" content="Real-time analytical monitoring dashboard for microplastic particle detection, morphology classification, concentration trends, and sample status tracking.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="logo-icon-wrap">
+          <img src="assets/icons/logo.svg" alt="AquaNanoAI Logo" class="brand-logo-img">
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">AquaNano<span>AI</span></span>
+          <span class="brand-sub">Microplastics Research Lab</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="dashboard.html" class="nav-link active">Dashboard</a>
+        <a href="detection.html" class="nav-link">Detection</a>
+        <a href="analysis.html" class="nav-link">Analysis</a>
+        <a href="samples.html" class="nav-link">Samples</a>
+        <a href="research.html" class="nav-link">Research</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <button type="button" class="theme-toggle-btn" aria-label="Toggle Light and Dark Mode"></button>
+        <a href="detection.html" class="btn btn-primary btn-sm d-none-mobile">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M5 12h14"/></svg>
+          Ingest Sample
+        </a>
+        <button type="button" class="mobile-nav-toggle" aria-label="Open Navigation Drawer">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-drawer" id="mobileDrawer">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="dashboard.html" class="nav-link active">Dashboard</a>
+    <a href="detection.html" class="nav-link">Detection</a>
+    <a href="analysis.html" class="nav-link">Analysis</a>
+    <a href="samples.html" class="nav-link">Samples</a>
+    <a href="research.html" class="nav-link">Research</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+    <div style="margin-top: 1rem;">
+      <a href="detection.html" class="btn btn-primary" style="width: 100%;">Ingest Water Sample</a>
+    </div>
+  </div>
+
+  <!-- App Shell with Sidebar -->
+  <div class="app-shell">
+    
+    <!-- Sidebar -->
+    <aside class="app-sidebar">
+      <div class="sidebar-heading">Navigation</div>
+      <div class="sidebar-menu">
+        <a href="dashboard.html" class="sidebar-item active">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          Dashboard Overview
+        </a>
+        <a href="detection.html" class="sidebar-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          Detection Pipeline
+        </a>
+        <a href="analysis.html" class="sidebar-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+          Analysis & Optics
+        </a>
+        <a href="samples.html" class="sidebar-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          Sample Repository
+        </a>
+      </div>
+
+      <div class="sidebar-heading">Scientific Protocol</div>
+      <div class="sidebar-menu">
+        <a href="research.html" class="sidebar-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          Methodology & Theory
+        </a>
+        <a href="contact.html" class="sidebar-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          Lab Support & Contact
+        </a>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="system-status-box">
+          <div style="display: flex; align-items: center; margin-bottom: 0.35rem;">
+            <span class="status-indicator"></span>
+            <strong style="color: var(--text-primary);">VISION ENGINE ACTIVE</strong>
+          </div>
+          <div style="color: var(--text-muted); font-size: 0.72rem; margin-bottom: 0.5rem;">
+            Mode: Synthetic Client Inference<br>
+            Storage: Browser Local Cache
+          </div>
+          <button type="button" class="btn btn-outline btn-sm" id="btnResetDemoData" style="width: 100%; font-size: 0.72rem; padding: 0.3rem 0.5rem;">
+            ↺ Reset Demo Data
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="app-main">
+      
+      <!-- Dashboard Header -->
+      <div class="dashboard-header">
+        <div>
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.4rem;">
+            <h1 class="page-title">Water System Monitoring Dashboard</h1>
+            <span class="badge badge-demo">Simulated Laboratory Dataset</span>
+          </div>
+          <p class="page-description">
+            Continuous optical surveillance and quantitative microplastic particle analysis across municipal and raw water catchments.
+          </p>
+        </div>
+
+        <div style="display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap;">
+          <button type="button" class="btn btn-secondary btn-sm" id="btnExportCSV">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Export All (CSV)
+          </button>
+          <a href="detection.html" class="btn btn-primary btn-sm">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+            Ingest Sample
+          </a>
+        </div>
+      </div>
+
+      <!-- KPI Metrics Grid -->
+      <div class="metrics-grid">
+        
+        <!-- Total Samples -->
+        <div class="metric-card">
+          <div class="metric-top">
+            <span class="metric-title">Total Samples Ingested</span>
+            <div class="metric-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            </div>
+          </div>
+          <div class="metric-value" id="kpiTotalSamples">0</div>
+          <div class="metric-meta">
+            <span>Historical test catalog</span>
+          </div>
+        </div>
+
+        <!-- Samples Analyzed -->
+        <div class="metric-card">
+          <div class="metric-top">
+            <span class="metric-title">Samples Analyzed</span>
+            <div class="metric-icon" style="background: rgba(16, 185, 129, 0.1); color: var(--accent-green);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+          </div>
+          <div class="metric-value" id="kpiAnalyzed">0</div>
+          <div class="metric-meta">
+            <span id="kpiAnalyzedPct">0%</span> of submitted samples
+          </div>
+        </div>
+
+        <!-- Samples with Candidate Particles -->
+        <div class="metric-card">
+          <div class="metric-top">
+            <span class="metric-title">Flagged Particles Detected</span>
+            <div class="metric-icon" style="background: rgba(244, 63, 94, 0.1); color: var(--particle-fragment);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            </div>
+          </div>
+          <div class="metric-value" id="kpiFlagged">0</div>
+          <div class="metric-meta">
+            <span>Positive candidate count</span>
+          </div>
+        </div>
+
+        <!-- Samples Awaiting Analysis -->
+        <div class="metric-card">
+          <div class="metric-top">
+            <span class="metric-title">Awaiting Analysis</span>
+            <div class="metric-icon" style="background: rgba(245, 158, 11, 0.1); color: var(--accent-amber);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+          </div>
+          <div class="metric-value" id="kpiAwaiting">0</div>
+          <div class="metric-meta">
+            <span>Pending queue</span>
+          </div>
+        </div>
+
+        <!-- Average Concentration -->
+        <div class="metric-card">
+          <div class="metric-top">
+            <span class="metric-title">Mean Concentration</span>
+            <div class="metric-icon" style="background: rgba(20, 184, 166, 0.1); color: var(--accent-teal-light);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+            </div>
+          </div>
+          <div class="metric-value" id="kpiMeanConcentration">0.00</div>
+          <div class="metric-meta">
+            <span>particles / liter (L)</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Charts Section -->
+      <div class="charts-grid">
+        
+        <!-- Chart 1: Particle Morphology Distribution -->
+        <div class="card chart-card-sm">
+          <div class="card-header-flex">
+            <div>
+              <h3 class="card-title">Particle Morphology Types</h3>
+              <p style="font-size: 0.78rem; color: var(--text-muted);">Classification across analyzed candidates</p>
+            </div>
+            <span class="badge badge-info">Morphology</span>
+          </div>
+          <div class="chart-container">
+            <canvas id="morphologyChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Chart 2: Analysis & Detection Trend Line -->
+        <div class="card chart-card-lg">
+          <div class="card-header-flex">
+            <div>
+              <h3 class="card-title">Detection Trend Timeline</h3>
+              <p style="font-size: 0.78rem; color: var(--text-muted);">Microplastics detected vs volume surveyed over time</p>
+            </div>
+            <div style="display: flex; gap: 0.5rem;">
+              <span class="badge badge-fiber">Fibers</span>
+              <span class="badge badge-fragment">Fragments</span>
+            </div>
+          </div>
+          <div class="chart-container">
+            <canvas id="trendsChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Chart 3: Particle Concentration by Catchment Location -->
+        <div class="card chart-card-half">
+          <div class="card-header-flex">
+            <div>
+              <h3 class="card-title">Concentration by Water Source Location</h3>
+              <p style="font-size: 0.78rem; color: var(--text-muted);">Normalized particles per liter (part/L)</p>
+            </div>
+          </div>
+          <div class="chart-container">
+            <canvas id="locationConcentrationChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Chart 4: Particle Size Distribution Histogram -->
+        <div class="card chart-card-half">
+          <div class="card-header-flex">
+            <div>
+              <h3 class="card-title">Calibrated Size Distribution</h3>
+              <p style="font-size: 0.78rem; color: var(--text-muted);">Major axis lengths categorized into micrometer bins (µm)</p>
+            </div>
+          </div>
+          <div class="chart-container">
+            <canvas id="sizeHistogramChart"></canvas>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Recent Samples Table -->
+      <div class="card">
+        <div class="card-header-flex">
+          <div>
+            <h3 class="card-title">Recent Water Sample Records</h3>
+            <p style="font-size: 0.82rem; color: var(--text-muted);">Latest ingested water specimens and analysis summaries</p>
+          </div>
+          
+          <div style="display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap;">
+            <input type="text" id="recentSearchInput" class="form-control" placeholder="Search ID or Location..." style="width: 220px; padding: 0.45rem 0.8rem; font-size: 0.85rem;">
+            <select id="statusFilterSelect" class="form-control" style="width: 170px; padding: 0.45rem 0.8rem; font-size: 0.85rem;">
+              <option value="ALL">All Statuses</option>
+              <option value="Flagged Particles">Flagged Particles</option>
+              <option value="Non-Detected">Non-Detected</option>
+              <option value="Awaiting Analysis">Awaiting Analysis</option>
+            </select>
+            <a href="samples.html" class="btn btn-outline btn-sm">
+              View All Samples →
+            </a>
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="data-table" id="recentSamplesTable">
+            <thead>
+              <tr>
+                <th>Sample ID</th>
+                <th>Catchment Location</th>
+                <th>Water Type</th>
+                <th>Date</th>
+                <th>Volume (L)</th>
+                <th>Candidates</th>
+                <th>Concentration</th>
+                <th>Status</th>
+                <th style="text-align: right;">Action</th>
+              </tr>
+            </thead>
+            <tbody id="recentSamplesTbody">
+              <!-- Dynamically populated via dashboard.js -->
+            </tbody>
+          </table>
+        </div>
+
+        <div id="tableEmptyState" style="display: none; padding: 3rem 1rem; text-align: center; color: var(--text-muted);">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin-bottom: 0.75rem; opacity: 0.5;"><circle cx="12" cy="12" r="10"/><path d="M16 16s-1.5-2-4-2-4 2-4 2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+          <p>No sample records match your search criteria.</p>
+        </div>
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- Shared Scripts -->
+  <script src="js/main.js"></script>
+  <!-- Dashboard Specific Script -->
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

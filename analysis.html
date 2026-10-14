@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Optical Analysis & Particle Quantification | AquaNanoAI</title>
+  <meta name="description" content="Detailed computer vision analysis results, interactive particle bounding boxes, morphology classification, and concentration metrics.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="logo-icon-wrap">
+          <img src="assets/icons/logo.svg" alt="AquaNanoAI Logo" class="brand-logo-img">
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">AquaNano<span>AI</span></span>
+          <span class="brand-sub">Microplastics Research Lab</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="detection.html" class="nav-link">Detection</a>
+        <a href="analysis.html" class="nav-link active">Analysis</a>
+        <a href="samples.html" class="nav-link">Samples</a>
+        <a href="research.html" class="nav-link">Research</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <button type="button" class="theme-toggle-btn" aria-label="Toggle Light and Dark Mode"></button>
+        <button type="button" class="mobile-nav-toggle" aria-label="Open Navigation Drawer">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-drawer" id="mobileDrawer">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="dashboard.html" class="nav-link">Dashboard</a>
+    <a href="detection.html" class="nav-link">Detection</a>
+    <a href="analysis.html" class="nav-link active">Analysis</a>
+    <a href="samples.html" class="nav-link">Samples</a>
+    <a href="research.html" class="nav-link">Research</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </div>
+
+  <!-- App Shell -->
+  <div class="app-shell">
+    
+    <!-- Sidebar -->
+    <aside class="app-sidebar">
+      <div class="sidebar-heading">Navigation</div>
+      <div class="sidebar-menu">
+        <a href="dashboard.html" class="sidebar-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          Dashboard Overview
+        </a>
+        <a href="detection.html" class="sidebar-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          Detection Pipeline
+        </a>
+        <a href="analysis.html" class="sidebar-item active">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+          Analysis & Optics
+        </a>
+        <a href="samples.html" class="sidebar-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          Sample Repository
+        </a>
+      </div>
+
+      <div class="sidebar-heading">Select Sample</div>
+      <div style="padding: 0.5rem 0.75rem;">
+        <select id="sampleSelectDropdown" class="form-control" style="font-size: 0.8rem; padding: 0.4rem 0.6rem;">
+          <!-- Populated dynamically -->
+        </select>
+      </div>
+
+      <div class="sidebar-footer">
+        <button type="button" class="btn btn-outline btn-sm" id="btnPrintReport" style="width: 100%; margin-bottom: 0.5rem;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          Print Report Certificate
+        </button>
+        <button type="button" class="btn btn-secondary btn-sm" id="btnDownloadReportJson" style="width: 100%;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Export JSON Data
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="app-main">
+      
+      <!-- Top Sample Banner -->
+      <div class="dashboard-header">
+        <div>
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.4rem; flex-wrap: wrap;">
+            <h1 class="page-title mono" id="analysisSampleId">MP-2026-081</h1>
+            <span class="badge badge-danger" id="analysisStatusBadge">Flagged Particles</span>
+            <span class="badge badge-demo">Simulated AI Inference</span>
+          </div>
+          <p class="page-description" id="analysisLocation">
+            Central Municipal Water Treatment Plant - Effluent Basin
+          </p>
+        </div>
+
+        <div style="display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap;" class="no-print">
+          <a href="dashboard.html" class="btn btn-secondary btn-sm">
+            ← Dashboard
+          </a>
+          <button type="button" class="btn btn-primary btn-sm" id="btnPrintTop">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+            Print Certificate
+          </button>
+        </div>
+      </div>
+
+      <!-- Sample Summary KPI Bar -->
+      <div class="metrics-grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); margin-bottom: 2rem;">
+        
+        <div class="metric-card">
+          <div class="metric-top"><span class="metric-title">Candidate Count</span></div>
+          <div class="metric-value" id="resCandidateCount" style="color: var(--particle-fragment);">0</div>
+          <div class="metric-meta">Segmented objects</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-top"><span class="metric-title">Sample Volume</span></div>
+          <div class="metric-value" id="resVolume">0.0 L</div>
+          <div class="metric-meta">Filtered volume</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-top"><span class="metric-title">Concentration</span></div>
+          <div class="metric-value" id="resConcentration" style="color: var(--accent-cyan);">0.00</div>
+          <div class="metric-meta">particles / liter (L)</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-top"><span class="metric-title">Mean Confidence</span></div>
+          <div class="metric-value" id="resConfidence" style="color: var(--accent-teal-light);">0%</div>
+          <div class="metric-meta">Neural classification</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-top"><span class="metric-title">Size Range</span></div>
+          <div class="metric-value" id="resSizeRange" style="font-size: 1.35rem;">—</div>
+          <div class="metric-meta">Calibrated major axis</div>
+        </div>
+
+      </div>
+
+      <!-- Interactive Micrograph & Bounding Box Canvas -->
+      <div class="card" style="margin-bottom: 2rem;">
+        <div class="card-header-flex">
+          <div>
+            <h3 class="card-title">Optical Microscopy & Deep Vision Overlay</h3>
+            <p style="font-size: 0.82rem; color: var(--text-muted);">
+              Hover or click on highlighted bounding boxes to inspect calibrated dimensions and classification confidence.
+            </p>
+          </div>
+
+          <!-- Canvas Controls Toolbar -->
+          <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
+            <label style="display: flex; align-items: center; gap: 0.35rem; font-size: 0.82rem; cursor: pointer;">
+              <input type="checkbox" id="chkShowBoxes" checked> Bounding Boxes
+            </label>
+            <label style="display: flex; align-items: center; gap: 0.35rem; font-size: 0.82rem; cursor: pointer; margin-left: 0.5rem;">
+              <input type="checkbox" id="chkShowLabels" checked> Class Labels
+            </label>
+            <select id="filterParticleType" class="form-control" style="width: 140px; padding: 0.35rem 0.6rem; font-size: 0.8rem;">
+              <option value="ALL">All Morphologies</option>
+              <option value="fiber">Fibers Only</option>
+              <option value="fragment">Fragments Only</option>
+              <option value="film">Films Only</option>
+              <option value="bead">Beads Only</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Canvas Container -->
+        <div style="position: relative; background: #000; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; min-height: 480px;">
+          <canvas id="analysisCanvas" style="max-width: 100%; height: auto; display: block; cursor: crosshair;"></canvas>
+          
+          <!-- Particle Hover Tooltip Overlay -->
+          <div id="particleTooltip" style="display: none; position: absolute; background: rgba(15, 23, 42, 0.95); border: 1px solid var(--accent-cyan); border-radius: var(--radius-sm); padding: 0.6rem 0.8rem; font-size: 0.78rem; pointer-events: none; z-index: 20; box-shadow: var(--shadow-lg);">
+            <!-- Populated on hover -->
+          </div>
+        </div>
+
+        <!-- Canvas Legend -->
+        <div style="display: flex; gap: 1.5rem; margin-top: 1rem; flex-wrap: wrap; font-size: 0.82rem; align-items: center;">
+          <span style="color: var(--text-muted); font-weight: 600;">Morphology Legend:</span>
+          <span style="display: flex; align-items: center; gap: 0.4rem; color: var(--particle-fiber);">
+            <span style="width: 12px; height: 12px; background: var(--particle-fiber); border-radius: 2px;"></span> Fiber (Synthetic Thread)
+          </span>
+          <span style="display: flex; align-items: center; gap: 0.4rem; color: var(--particle-fragment);">
+            <span style="width: 12px; height: 12px; background: var(--particle-fragment); border-radius: 2px;"></span> Fragment (Irregular Shard)
+          </span>
+          <span style="display: flex; align-items: center; gap: 0.4rem; color: var(--particle-film);">
+            <span style="width: 12px; height: 12px; background: var(--particle-film); border-radius: 2px;"></span> Film (Planar Sheet)
+          </span>
+          <span style="display: flex; align-items: center; gap: 0.4rem; color: var(--particle-bead);">
+            <span style="width: 12px; height: 12px; background: var(--particle-bead); border-radius: 50%;"></span> Bead / Microsphere
+          </span>
+        </div>
+      </div>
+
+      <!-- Detected Particles Table & Spectroscopy Correlation -->
+      <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 1.5rem;" class="analysis-grid">
+        
+        <!-- Detected Particle Inventory Table -->
+        <div class="card">
+          <div class="card-header-flex">
+            <div>
+              <h3 class="card-title">Particle Inventory & Morphometrics</h3>
+              <p style="font-size: 0.82rem; color: var(--text-muted);">Segmented regions with calibrated dimensions</p>
+            </div>
+            <span class="badge badge-info" id="inventoryCountBadge">0 Items</span>
+          </div>
+
+          <div class="table-responsive" style="max-height: 380px; overflow-y: auto;">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Morphology Class</th>
+                  <th>Major Axis (µm)</th>
+                  <th>Confidence</th>
+                  <th>Candidate Target</th>
+                </tr>
+              </thead>
+              <tbody id="particleInventoryTbody">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Confirmatory Spectroscopy & Chemical Limitations -->
+        <div class="card">
+          <h3 class="card-title" style="margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+            Spectroscopic Verification Guide
+          </h3>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.25rem;">
+            Optical microscopy and computer vision provide rapid <strong>candidate screening</strong>. Chemical confirmation of synthetic polymers requires targeted laser micro-spectroscopy:
+          </p>
+
+          <div style="display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.82rem; margin-bottom: 1.5rem;">
+            <div style="padding: 0.6rem 0.8rem; background: var(--bg-secondary); border-radius: var(--radius-sm); border-left: 3px solid #38bdf8;">
+              <strong style="color: var(--text-primary);">Micro-Raman Spectroscopy:</strong><br>
+              <span style="color: var(--text-muted);">Optimal for particles &lt; 20 µm. Non-destructive, analyzes single-particle vibrational fingerprints.</span>
+            </div>
+            <div style="padding: 0.6rem 0.8rem; background: var(--bg-secondary); border-radius: var(--radius-sm); border-left: 3px solid #14b8a6;">
+              <strong style="color: var(--text-primary);">Micro-FTIR (ATR/Transmission):</strong><br>
+              <span style="color: var(--text-muted);">Standard for particles &gt; 20 µm. Distinguishes Polyethylene (PE), Polypropylene (PP), and PET from natural cellulose.</span>
+            </div>
+          </div>
+
+          <div class="scientific-disclaimer" style="margin-top: 0; font-size: 0.76rem;">
+            <strong>Important Regulatory Note:</strong> The presence of detected candidate particles does not automatically classify drinking water as hazardous or in violation of potable water regulations, as formal health-based guideline values for microplastics have not yet been codified by health agencies.
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- Shared Scripts -->
+  <script src="js/main.js"></script>
+  <!-- Analysis Script -->
+  <script src="js/analysis.js"></script>
+</body>
+</html>
